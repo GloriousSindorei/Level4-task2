@@ -1,11 +1,10 @@
 package com.example.madlevel4task2
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_rps_play.*
 import kotlinx.coroutines.CoroutineScope
@@ -43,8 +42,6 @@ class RPSPlayFragment : Fragment() {
         //    var historyIntent = Intent(this, RPSHistory::class.java)
         //    startActivity(historyIntent)
         //}
-
-        val toolbar: Toolbar
 
         btnPlayRock.setOnClickListener {
             playerPick(RPS.Choice.ROCK)

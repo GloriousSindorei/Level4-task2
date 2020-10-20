@@ -2,11 +2,10 @@ package com.example.madlevel4task2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,7 +24,7 @@ class RPSHistoryFragment : Fragment() {
     private val matchList = arrayListOf<RPS>()
     private val matchAdapter = RPSAdapter(matchList)
     private lateinit var rpsRepository: RPSRepository
-    private val scope = CoroutineScope(Dispatchers.IO)
+    private val scope = CoroutineScope(Dispatchers.Main)
 
     private lateinit var viewManager: RecyclerView.LayoutManager
 
@@ -34,8 +33,6 @@ class RPSHistoryFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
 
-        rpsRepository = RPSRepository(requireContext())
-        initViews()
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_rps_history, container, false)
@@ -44,9 +41,15 @@ class RPSHistoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        rpsRepository = RPSRepository(requireContext())
+        initViews()
+        setHasOptionsMenu(true)
     }
 
     private fun initViews(){
+
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.game_history)
+
         viewManager = LinearLayoutManager(activity)
         rvHistory.addItemDecoration(
             DividerItemDecoration(
@@ -82,5 +85,19 @@ class RPSHistoryFragment : Fragment() {
             }
             getAllMatches()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_fragment_rps_history, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if(item.itemId == R.id.action_history) {
+            clearHistory()
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }

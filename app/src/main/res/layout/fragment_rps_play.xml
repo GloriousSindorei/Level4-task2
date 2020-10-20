@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RPSPlayFragment">
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/instructions"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+    <ImageView
+        android:id="@+id/ivComputer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/colorPrimaryDark"
+        android:contentDescription="@string/computer_action"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        app:srcCompat="@drawable/rock" />
+
+    <ImageView
+        android:id="@+id/ivPlayer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="40dp"
+        android:background="@color/colorPrimaryDark"
+        android:contentDescription="@string/player_action"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
+        app:srcCompat="@drawable/rock" />
+
+    <TextView
+        android:id="@+id/tvVS"
+        android:layout_width="115dp"
+        android:layout_height="66dp"
+        android:text="@string/v_s"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/ivComputer"
+        app:layout_constraintEnd_toStartOf="@+id/ivComputer"
+        app:layout_constraintStart_toEndOf="@+id/ivPlayer"
+        app:layout_constraintTop_toTopOf="@id/ivComputer"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvComputer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/computer"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/ivComputer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/ivComputer"
+        app:layout_constraintTop_toBottomOf="@id/ivComputer" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:background="@color/colorPrimary"
+        android:src="@android:drawable/divider_horizontal_textfield"
+        app:layout_constraintBottom_toTopOf="@+id/tvWLDRatio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInstructions" />
+
+    <TextView
+        android:id="@+id/tvPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/player"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/ivPlayer"
+        app:layout_constraintStart_toStartOf="@id/ivPlayer"
+        app:layout_constraintTop_toBottomOf="@id/ivPlayer" />
+
+    <!--Buttons used to play the game-->
+    <ImageButton
+        android:id="@+id/btnPlayRock"
+        android:layout_width="130dp"
+        android:layout_height="110dp"
+        android:adjustViewBounds="true"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/press_to_play_rock"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnPlayPaper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/rock" />
+
+    <ImageButton
+        android:id="@+id/btnPlayPaper"
+        android:layout_width="130dp"
+        android:layout_height="110dp"
+        android:adjustViewBounds="true"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/press_to_play_paper"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnPlayScissor"
+        app:layout_constraintStart_toEndOf="@id/btnPlayRock"
+        app:srcCompat="@drawable/paper" />
+
+    <ImageButton
+        android:id="@+id/btnPlayScissor"
+        android:layout_width="130dp"
+        android:layout_height="110dp"
+        android:adjustViewBounds="true"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/press_to_play_scissor"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnPlayPaper"
+        app:srcCompat="@drawable/scissors" />
+
+    <TextView
+        android:id="@+id/tvResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvVS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWLDRatio"
+        app:layout_constraintVertical_bias="0.505" />
+
+    <TextView
+        android:id="@+id/tvWLDRatio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/win_loss_draw_ratio"
+        app:layout_constraintBottom_toTopOf="@+id/tvVS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInstructions"
+        app:layout_constraintVertical_bias="0.209" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

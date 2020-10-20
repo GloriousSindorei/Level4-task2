@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvWinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivComputerHistory"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="75dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toStartOf="@id/tvVSHistory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rock" />
+
+    <ImageView
+        android:id="@+id/ivPlayerHistory"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="75dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvVSHistory"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/paper" />
+
+    <TextView
+        android:id="@+id/tvVSHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/v_s"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@id/ivComputerHistory"
+        app:layout_constraintEnd_toStartOf="@id/ivPlayerHistory"
+        app:layout_constraintTop_toTopOf="@id/ivComputerHistory"
+        app:layout_constraintBottom_toBottomOf="@id/ivPlayerHistory"/>
+
+    <TextView
+        android:id="@+id/tvComputerHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/computer"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/ivComputerHistory"
+        app:layout_constraintEnd_toEndOf="@id/ivComputerHistory"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="@id/ivComputerHistory" />
+
+    <TextView
+        android:id="@+id/tvPlayerHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/ivPlayerHistory"
+        app:layout_constraintEnd_toEndOf="@id/ivPlayerHistory"
+        app:layout_constraintStart_toStartOf="@id/ivPlayerHistory" />
+
+    <TextView
+        android:id="@+id/tvPlayDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWinner"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

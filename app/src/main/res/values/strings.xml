@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MadLevel4Task2</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="welcome">Welcome</string>
+    <string name="instructions">Instructions: select rock, paper or scissors to play.</string>
+    <string name="computer_action">Computer</string>
+    <string name="player_action">You</string>
+    <string name="v_s">V.S.</string>
+    <string name="computer">Computer</string>
+    <string name="player">You</string>
+    <string name="press_to_play_rock">Press to play rock</string>
+    <string name="press_to_play_paper">Press to play paper</string>
+    <string name="press_to_play_scissor">Press to play scissor</string>
+    <string name="result">Result</string>
+    <string name="win_loss_draw_ratio">Your all time statistics</string>
+    <string name="computerWin">Computer wins!</string>
+    <string name="draw">Draw</string>
+    <string name="playerWins">You win!</string>
+</resources>

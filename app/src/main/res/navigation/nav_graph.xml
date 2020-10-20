@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/RPSPlayFragment">
+
+    <fragment
+        android:id="@+id/RPSPlayFragment"
+        android:name="com.example.madlevel4task2.RPSPlayFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_rps_play">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/RPSHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RPSHistoryFragment"
+        android:name="com.example.madlevel4task2.RPSHistoryFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_rps_history">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/RPSPlayFragment" />
+    </fragment>
+</navigation>
